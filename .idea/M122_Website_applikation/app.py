@@ -14,7 +14,7 @@ def index():
 def convert():
     from_currency = request.form['from_currency']
     to_currency = request.form['to_currency']
-    amount = float(request.form['amount'])
+    amount = float(request.form['amountt'])
 
     response = requests.get(API_URL + from_currency)
     data = response.json()
