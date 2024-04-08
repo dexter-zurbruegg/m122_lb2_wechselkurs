@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Currency Converter</h1>
+    <form action="/convert" method="POST">
+        <input type="number" name="amount" placeholder="Amount" required>
+        <select name="from_currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <!-- Add more currency options here -->
+        </select>
+        <select name="to_currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <!-- Add more currency options here -->
+        </select>
+        <button type="submit">Convert</button>
+    </form>
+</body>
+</html>
