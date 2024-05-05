@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
 import requests
 import logging
+import config
 
 app = Flask(__name__)
 
 # Funktion zum Abrufen der Wechselkurse von der API
 def get_exchange_rates():
-    api_key = "07b43fd62ae9d052c6ab74c6"
+    api_key = config.API_KEY
     url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/USD"
     response = requests.get(url)
 
