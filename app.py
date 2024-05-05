@@ -1,16 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import api
+
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
-    exchange_rates = api.get_exchange_rates()
-    return render_template('index.html', exchange_rates=exchange_rates)
+    alt_response = api.get_alternative_exchange_rates()
+    print(alt_response)
+    return render_template('index.html', exchange_rates=api.get_exchange_rates())
 
 
 if __name__ == '__main__':
-    app.run()
-
-
+    app.run(debug=True)
