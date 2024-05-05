@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umrechnungshistorie</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Umrechnungshistorie</h1>
+    <ul>
+        {% for conversion in conversion_history %}
+        <li>{{ conversion[0] }} {{ conversion[1] }} entspricht {{ conversion[2] }} {{ conversion[3] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Zurück zur Startseite</a>
+</body>
+</html>

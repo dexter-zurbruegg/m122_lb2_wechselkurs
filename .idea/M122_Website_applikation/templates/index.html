@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Converter</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Währungsumrechner</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
-    <h1>Currency Converter</h1>
-    <form action="/convert" method="POST">
-        <input type="number" name="amount" placeholder="Amount" required>
-        <select name="from_currency" required>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <!-- Add more currency options here -->
-        </select>
-        <select name="to_currency" required>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <!-- Add more currency options here -->
-        </select>
-        <button type="submit">Convert</button>
+    <h1>Währungsumrechner</h1>
+    <form action="/" method="post">
+        <label for="amount">Betrag:</label>
+        <input type="number" id="amount" name="amount" required>
+        <label for="from_currency">Ausgangswährung:</label>
+        <input type="text" id="from_currency" name="from_currency" required>
+        <label for="to_currency">Zielwährung:</label>
+        <input type="text" id="to_currency" name="to_currency" required>
+        <button type="submit">Umrechnen</button>
+    </form>
+    <form action="/history" method="get">
+        <button type="submit">Letzte Umrechnungen anzeigen</button>
     </form>
 </body>
 </html>
