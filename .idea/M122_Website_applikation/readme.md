@@ -45,10 +45,6 @@ Sie müssen zwei APIs verwenden, um Währungskursdaten abzurufen:
 - und folgen Sie den Anweisungen zur Generierung eines API-Schlüssels.
   Fügen Sie den erhaltenen API-Schlüssel der `config.py`-Datei hinzu.
 
-- **Free Currency API:** [Free Currency API](https://app.freecurrencyapi.com/dashboard)
-  Um einen API-Schlüssel zu erhalten, registrieren Sie sich auf der Website 
-- und folgen Sie den Anweisungen zur Generierung eines API-Schlüssels.
-  Fügen Sie den erhaltenen API-Schlüssel ebenfalls der `config.py`-Datei hinzu.
 
 ## Sicherheit
 
