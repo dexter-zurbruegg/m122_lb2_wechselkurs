@@ -1,4 +1,4 @@
-# M122 LB3 Anleitung
+# M122 LB2 Anleitung
 
 ## 1. Python 3.11 installieren
 ## 2. Git-Repository herunterladen
