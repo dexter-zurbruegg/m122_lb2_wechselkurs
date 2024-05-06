@@ -4,7 +4,6 @@ import requests
 import freecurrencyapi
 import config
 
-
 client = freecurrencyapi.Client(config.API_KEY)
 
 LOGS_DIR = 'logs'
@@ -28,6 +27,7 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
+
 def equalize_to_chf(exchange_rates):
     chf_value = exchange_rates['CHF']
     for currency, rate in exchange_rates.items():
@@ -35,11 +35,13 @@ def equalize_to_chf(exchange_rates):
     exchange_rates['CHF'] = 1
     return exchange_rates
 
+
 def get_exchange_rates():
     response = requests.get(config.API_URL)
     data = response.json()
     logger.info(f"Response: {data}")
     return data
+
 
 def get_alternative_exchange_rates():
     response = requests.get(config.ALT_API_URL)
