@@ -10,12 +10,12 @@ ALT_API_URL = f'https://api.freecurrencyapi.com/v1/latest?apikey={ALT_API_KEY}'
 
 client = freecurrencyapi.Client(ALT_API_KEY)
 
-# Create a 'logs' directory if it doesn't exist
+
 LOGS_DIR = 'logs'
 if not os.path.exists(LOGS_DIR):
     os.makedirs(LOGS_DIR)
 
-# Configure logging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -27,7 +27,6 @@ class ResponseFileHandler(logging.FileHandler):
             file.write(self.format(record) + "\n")
 
 
-# Add the custom handler to the logger
 handler = ResponseFileHandler(filename="response.log", mode="a")
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
